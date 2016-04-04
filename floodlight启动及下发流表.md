@@ -59,7 +59,7 @@ floodlight官网上使用StaticFlowPusher下发流表实例：
 >         "in_port":"2",
 >         "active":"true",
 >         "actions":"output=flood"
->     }
+>         }
 >      
 >     pusher.set(flow1)
 >     pusher.set(flow2)
