@@ -28,38 +28,38 @@ floodlight官网上使用StaticFlowPusher下发流表实例：
 >             path = '/wm/staticflowpusher/json'
 >             headers = {
 >                 'Content-type': 'application/json',
->             	'Accept': 'application/json',
->             	}
->         	body = json.dumps(data)
->         	conn = httplib.HTTPConnection(self.server, 8080)
->         	conn.request(action, path, body, headers)
->         	response = conn.getresponse()
->         	ret = (response.status, response.reason, response.read())
->         	print ret
->         	conn.close()
->         	return ret
+>                 'Accept': 'application/json',
+>                 }
+>             body = json.dumps(data)
+>             conn = httplib.HTTPConnection(self.server, 8080)
+>             conn.request(action, path, body, headers)
+>             response = conn.getresponse()
+>             ret = (response.status, response.reason, response.read())
+>             print ret
+>             conn.close()
+>             return ret
 >  
 >     pusher = StaticFlowPusher('<insert_controller_ip')
 >      
 >     flow1 = {
->     	'switch':"00:00:00:00:00:00:00:01",
->     	"name":"flow_mod_1",
->     	"cookie":"0",
->     	"priority":"32768",
->     	"in_port":"1",
->     	"active":"true",
->     	"actions":"output=flood"
->     	}
+>         'switch':"00:00:00:00:00:00:00:01",
+>         "name":"flow_mod_1",
+>         "cookie":"0",
+>         "priority":"32768",
+>         "in_port":"1",
+>         "active":"true",
+>         "actions":"output=flood"
+>         }
 >      
 >     flow2 = {
->     	'switch':"00:00:00:00:00:00:00:01",
->     	"name":"flow_mod_2",
->     	"cookie":"0",
->     	"priority":"32768",
->     	"in_port":"2",
->     	"active":"true",
->     	"actions":"output=flood"
->     	}
+>         'switch':"00:00:00:00:00:00:00:01",
+>         "name":"flow_mod_2",
+>         "cookie":"0",
+>         "priority":"32768",
+>         "in_port":"2",
+>         "active":"true",
+>         "actions":"output=flood"
+>     }
 >      
 >     pusher.set(flow1)
 >     pusher.set(flow2)
