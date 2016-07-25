@@ -1,7 +1,3 @@
-floodlight可以使用配置文件选择启动时需要加载的模块和端口：
-
-    -cf src/main/resources/floodlightdefault.properties
-
 floodlight官网上使用StaticFlowPusher下发流表实例：
 
 >     import httplib
